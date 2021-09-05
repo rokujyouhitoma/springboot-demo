@@ -16,7 +16,7 @@ public class DemoApplication {
 
   @GetMapping("/hello2")
   public String hello() {
-     return String.format("Hello World");
+     return String.format("Hello World!");
   }
 
   @GetMapping("/hello")
