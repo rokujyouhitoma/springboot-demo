@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-
 @SpringBootTest
 @AutoConfigureMockMvc
 class DemoApplicationTests {
@@ -25,15 +24,20 @@ class DemoApplicationTests {
 
 	@Test
 	public void getHello2() throws Exception {
-      mvc.perform(MockMvcRequestBuilders.get("/hello2?name=hi").accept(MediaType.APPLICATION_JSON))
-          .andExpect(status().isOk())
-          .andExpect(content().string(containsString("Hello World!")));
-  }
+		mvc.perform(MockMvcRequestBuilders.get("/hello2?name=hi").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk()).andExpect(content().string(containsString("Hello World!")));
+	}
 
 	@Test
 	public void getHello() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-        .andExpect(content().string(containsString("Hello World!")));
+		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.andExpect(content().string(containsString("Hello World!")));
 	}
+
+	@Test
+	public void getgreeting() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/greeting").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk()).andExpect(content().string(containsString("Hello, World!")));
+	}
+
 }
