@@ -3,5 +3,5 @@ all: format test
 format:
 	./mvnw spring-javaformat:apply
 
-test:
+test: format
 	./mvnw test
