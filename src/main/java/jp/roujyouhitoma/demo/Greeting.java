@@ -1,6 +1,8 @@
 package jp.roujyouhitoma.demo;
 
-public class Greeting {
+import java.io.Serializable;
+
+public class Greeting implements Serializable {
 
 	private final long id;
 
