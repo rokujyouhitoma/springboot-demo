@@ -1,10 +1,36 @@
 package jp.roujyouhitoma.demo;
 
+import java.util.Optional;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+class User {
+
+	String name;
+
+	public String getName() {
+		return this.name;
+	}
+
+}
+
+interface Dao<T> {
+
+	Optional<T> get(long id);
+
+}
+
+class UserDao implements Dao {
+
+	@Override
+	public Optional<UserDao> get(long id) {
+		return null;
+	}
+
+}
 
 @SpringBootApplication
 @RestController
